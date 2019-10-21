@@ -237,9 +237,9 @@ The NTDS.DIT file is constantly in use by the operating system and therefore can
 
 There are various techniques that can be used to extract this file or the information that is stored inside it however the majority of them are using one of these methods:
 
-####### Domain Controller Replication 
-####### Services Native Windows Binaries
-####### WMI
+###### Domain Controller Replication 
+###### Services Native Windows Binaries
+###### WMI
 
 In my case i will use (secretsdump.py and mimikatz)
 
