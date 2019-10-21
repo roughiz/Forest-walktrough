@@ -231,6 +231,17 @@ Please choose a path [0-1] 0
 ##### DCSync attack : 
 
 DCSync works by requesting account password data from a Domain Controller. It can also ask Domain Controllers to replicate information using the Directory Replication Service Remote Protocol. All this can be done without running any code on a Domain Controller unlike some of the other ways Mimikatz extracts password data. What's even worse this attack takes advantage of a valid and necessary function of Active Directory, meaning it cannot be turned off or disabled. This being said we must rely on detection.
+These hashes are stored in a database file in the domain controller (NTDS.DIT) with some additional information like group memberships and users.
+
+The NTDS.DIT file is constantly in use by the operating system and therefore cannot be copied directly to another location for extraction of information. This file can be found in the following Windows location:    C:\Windows\NTDS\NTDS.dit
+
+There are various techniques that can be used to extract this file or the information that is stored inside it however the majority of them are using one of these methods:
+
+> Domain Controller Replication 
+> Services Native Windows Binaries
+> WMI
+
+In my case i will use (secretsdump.py and mimikatz)
 
 #### Nota : When a user is part of a hight priviliged group, it can add the DCSync right.
 
