@@ -485,5 +485,6 @@ $ crackmapexec 10.10.10.161 -u administrator -H 32693b11e6aa90eb43d32c72a07ceea6
 #### Nota: 
 
 mimikatz dump just the "NTLM" hash, so we have to use (crackmapexec or wmiexec).
+
 secretsdump.py  dump "LM:NTLM"  hash, and we can use pth-wimexe tool to caught a shell. 
 
